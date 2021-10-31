@@ -30,7 +30,7 @@ Product.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       //is this correct?
-      defaultValue: [10],
+      defaultValue: 10,
       validate: {
         isNumeric: true,
       },
@@ -38,6 +38,10 @@ Product.init(
     category_id: {
       type: DataTypes.INTEGER,
       //references the Category model's id
+      references: {
+        model: "category",
+        key: "id,",
+      },
     },
   },
   {
